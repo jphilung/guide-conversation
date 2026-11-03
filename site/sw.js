@@ -1,5 +1,5 @@
 // La version est remplacée automatiquement par build_data.py à chaque génération.
-const V="v-4f4e6c3e9b";
+const V="v-8875ad87fd";
 const SHELL=["./","index.html","manifest.webmanifest","icon-192.png","icon-512.png","data.json"];
 self.addEventListener("install",e=>{self.skipWaiting();e.waitUntil((async()=>{
   const c=await caches.open(V);await c.addAll(SHELL);

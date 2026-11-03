@@ -85,6 +85,20 @@
    "audio": "audio/zh-0002.mp3"
   },
   {
+   "id": "es-es-0001",
+   "langue": "es-es",
+   "categorie": "directions",
+   "texte": "¿Dónde está el baño?",
+   "fr": "Où sont les toilettes ?",
+   "en": "Where is the bathroom?",
+   "api": "ˈdonde esˈta el ˈbaɲo",
+   "roman": "",
+   "commentaire": "",
+   "verifie": false,
+   "auto": [],
+   "audio": "audio/es-es-0001.mp3"
+  },
+  {
    "id": "zh-0003",
    "langue": "zh",
    "categorie": "salutations",
@@ -425,7 +439,7 @@
    "audio": "audio/zh-0022.mp3"
   },
   {
-   "id": "zh-0021",
+   "id": "zh-0023",
    "langue": "zh",
    "categorie": "salutations",
    "texte": "不是",
@@ -439,10 +453,10 @@
     "roman",
     "api"
    ],
-   "audio": "audio/zh-0021.mp3"
+   "audio": "audio/zh-0023.mp3"
   },
   {
-   "id": "zh-0022",
+   "id": "zh-0024",
    "langue": "zh",
    "categorie": "salutations",
    "texte": "不对",
@@ -456,10 +470,10 @@
     "roman",
     "api"
    ],
-   "audio": "audio/zh-0022.mp3"
+   "audio": "audio/zh-0024.mp3"
   },
   {
-   "id": "zh-0023",
+   "id": "zh-0025",
    "langue": "zh",
    "categorie": "salutations",
    "texte": "好",
@@ -473,10 +487,10 @@
     "roman",
     "api"
    ],
-   "audio": "audio/zh-0023.mp3"
+   "audio": "audio/zh-0025.mp3"
   },
   {
-   "id": "zh-0024",
+   "id": "zh-0026",
    "langue": "zh",
    "categorie": "salutations",
    "texte": "好的",
@@ -490,10 +504,10 @@
     "roman",
     "api"
    ],
-   "audio": "audio/zh-0024.mp3"
+   "audio": "audio/zh-0026.mp3"
   },
   {
-   "id": "zh-0025",
+   "id": "zh-0027",
    "langue": "zh",
    "categorie": "salutations",
    "texte": "好了",
@@ -507,10 +521,10 @@
     "roman",
     "api"
    ],
-   "audio": "audio/zh-0025.mp3"
+   "audio": "audio/zh-0027.mp3"
   },
   {
-   "id": "zh-0026",
+   "id": "zh-0028",
    "langue": "zh",
    "categorie": "salutations",
    "texte": "再见",
@@ -524,10 +538,10 @@
     "roman",
     "api"
    ],
-   "audio": "audio/zh-0026.mp3"
+   "audio": "audio/zh-0028.mp3"
   },
   {
-   "id": "zh-0027",
+   "id": "zh-0029",
    "langue": "zh",
    "categorie": "achats",
    "texte": "元",
@@ -541,7 +555,7 @@
     "roman",
     "api"
    ],
-   "audio": "audio/zh-0027.mp3"
+   "audio": "audio/zh-0029.mp3"
   }
  ]
 }
