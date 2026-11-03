@@ -10,6 +10,8 @@ Utilisation :
     python build_data.py ID_OU_URL_DU_SHEETS       # écrit dans site/
     python build_data.py guide_conversation.xlsx   # même chose depuis un fichier
     options : --no-audio   --force-audio (régénère tous les MP3)   --out dossier
+              --write-back : écrit les colonnes api et romanisation générées dans le Sheets (compte de
+              service en Éditeur requis) ; seulement des cellules vides, jamais ce que tu as saisi
 
 Accès au Sheets, au choix :
   - compte de service Google (recommandé, Sheets privé) : variable GOOGLE_SERVICE_ACCOUNT_JSON
@@ -81,23 +83,53 @@ def _csv_rows(sid, tab):
         with urllib.request.urlopen(url) as r:
             txt = r.read().decode("utf-8")
     except Exception as e:
-        sys.exit(f"Impossible de lire l'onglet « {tab} » ({e}). Le Sheets est-il partagé "
-                 "en lecture avec toute personne ayant le lien ?")
+        sys.exit(f"Impossible de lire l'onglet « {tab} » ({e}). Lecture publique utilisée : aucun compte "
+                 "de service détecté. Si tu en as configuré un, le secret GOOGLE_SERVICE_ACCOUNT_JSON est vide "
+                 "ou introuvable. Sinon, le Sheets doit être partagé en lecture avec toute personne ayant le lien.")
     if txt.lstrip().startswith("<"):
         sys.exit("Google a renvoyé une page web : partage le Sheets en lecture avec toute personne ayant le lien.")
     return list(csv.reader(io.StringIO(txt)))
 
-def _api_rows(sid, tab, info):
-    """Lecture via l'API Google Sheets avec un compte de service (Sheets privé, toutes les lignes)."""
+def _session(info, write=False):
     from google.oauth2 import service_account
     from google.auth.transport.requests import AuthorizedSession
-    creds = service_account.Credentials.from_service_account_info(
-        info, scopes=["https://www.googleapis.com/auth/spreadsheets.readonly"])
+    scope = "https://www.googleapis.com/auth/spreadsheets" + ("" if write else ".readonly")
+    return AuthorizedSession(service_account.Credentials.from_service_account_info(info, scopes=[scope]))
+
+def _api_rows(sid, tab, info):
+    """Lecture via l'API Google Sheets avec un compte de service (Sheets privé, toutes les lignes)."""
     url = f"https://sheets.googleapis.com/v4/spreadsheets/{sid}/values/{urllib.parse.quote(tab)}"
-    r = AuthorizedSession(creds).get(url, params={"valueRenderOption": "FORMATTED_VALUE"})
+    r = _session(info).get(url, params={"valueRenderOption": "FORMATTED_VALUE"})
     if r.status_code != 200:
         sys.exit(f"Erreur de l'API Google Sheets ({r.status_code}) sur l'onglet « {tab} » : {r.text[:400]}")
     return r.json().get("values", [])
+
+def _col(i):  # 0 -> A, 25 -> Z, 26 -> AA
+    out, i = "", i + 1
+    while i:
+        i, r = divmod(i - 1, 26); out = chr(65 + r) + out
+    return out
+
+def write_back(sid, info, writes):
+    """writes = [(id, colonne_index, valeur)]. Écrit UNIQUEMENT dans des cellules encore vides, et seulement
+    si la ligne porte toujours le même id (le Sheets a pu être modifié ou trié depuis la lecture)."""
+    cur = _api_rows(sid, "Expressions", info)  # relecture fraîche juste avant d'écrire
+    idc = [h.strip() for h in cur[0]].index("id")
+    pos = {str(r[idc]).strip(): n for n, r in enumerate(cur) if n and len(r) > idc}
+    data = []
+    for id_, ci, val in writes:
+        n = pos.get(id_)
+        if n is None or (ci < len(cur[n]) and str(cur[n][ci]).strip()):
+            continue
+        data.append({"range": f"Expressions!{_col(ci)}{n + 1}", "values": [[val]]})
+    if not data:
+        return 0
+    url = f"https://sheets.googleapis.com/v4/spreadsheets/{sid}/values:batchUpdate"
+    r = _session(info, write=True).post(url, json={"valueInputOption": "RAW", "data": data})
+    if r.status_code != 200:
+        print(f"! écriture dans le Sheets impossible ({r.status_code}) : {r.text[:300]}")
+        return 0
+    return len(data)
 
 def load(source, info=None):
     """Retourne (lignes de Langues sans en-tête, lignes de Expressions avec en-tête)."""
@@ -126,6 +158,7 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("source", help="ID ou URL du Google Sheets, ou chemin d'un .xlsx")
     ap.add_argument("--credentials", help="fichier JSON du compte de service (ou variable GOOGLE_SERVICE_ACCOUNT_JSON)")
+    ap.add_argument("--write-back", action="store_true", help="écrit api/romanisation générés dans le Sheets")
     ap.add_argument("--no-audio", action="store_true")
     ap.add_argument("--force-audio", action="store_true", help="régénère tous les MP3"); ap.add_argument("--out", default="site")
     a = ap.parse_args()
@@ -142,7 +175,7 @@ def main():
             langs[r[0].strip()] = dict(code=r[0].strip(), nom=r[1], local=r[2], systeme=r[3],
                                        voix_nav=r[4], voix_audio=r[5], vitesse=r[6])
     col = {n.strip(): i for i, n in enumerate(erows[0])}
-    rows, audio_items, review, seen = [], [], [], set()
+    rows, audio_items, review, seen, writes = [], [], [], set(), []
     for r in erows[1:]:
         def v(n):
             i = col.get(n)
@@ -158,13 +191,16 @@ def main():
         row = dict(id=id_, langue=lang, categorie=v("catégorie"), texte=text, fr=v("trad_fr"),
                    en=v("trad_en"), api=v("api"), roman=v("romanisation"),
                    commentaire=v("commentaire"), verifie=v("vérifié").lower() == "oui")
-        auto = []
-        for key, fn in (("roman", romanize), ("api", ipa)):
+        for key, fn, name in (("roman", romanize, "romanisation"), ("api", ipa, "api")):
             if not row[key]:
                 g = fn(lang, text)
                 if g:
-                    row[key] = g; auto.append(key); review.append([id_, text, key, g])
-        row["auto"] = auto
+                    row[key] = g
+                    review.append([id_, text, key, g])
+                    if a.write_back and col.get(name) is not None:
+                        writes.append((id_, col[name], g))
+        # « à vérifier » tant que la ligne n'est pas marquée vérifiée dans le Sheets
+        row["auto"] = [] if row["verifie"] else [k for k in ("api", "roman") if row[k]]
         row["audio"] = f"audio/{id_}.mp3"
         rows.append(row)
         if langs[lang]["voix_audio"]:
@@ -174,6 +210,14 @@ def main():
         with open("a_verifier.csv", "w", newline="", encoding="utf-8") as f:
             csv.writer(f).writerows([["id", "texte", "champ", "valeur_generee"]] + review)
         print(f"{len(review)} valeurs générées à relire → a_verifier.csv")
+
+    if a.write_back and writes:
+        if not raw.strip() or a.source.lower().endswith(".xlsx"):
+            print("--write-back nécessite un compte de service et un Google Sheets : ignoré")
+        else:
+            m = re.search(r"/d/([\w-]+)", a.source)
+            n = write_back(m.group(1) if m else a.source, json.loads(raw), writes)
+            print(f"{n} cellule(s) remplie(s) dans le Sheets")
 
     if not a.no_audio and audio_items:
         asyncio.run(make_audio(audio_items, out / "audio", out / "audio" / "manifest.json", a.force_audio))

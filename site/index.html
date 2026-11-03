@@ -84,6 +84,7 @@ function dlg(){
 function speak(e){
   const tts=()=>{if(!("speechSynthesis" in window)||!L[e.langue].voix_nav)return;speechSynthesis.cancel();
     const u=new SpeechSynthesisUtterance(e.texte);u.lang=L[e.langue].voix_nav;u.rate=.85;speechSynthesis.speak(u)};
+  if(!e.audio)return tts();
   const a=new Audio(e.audio);let done=false;
   const fb=()=>{if(!done){done=true;tts()}};
   a.onerror=fb;a.play().catch(fb);
@@ -104,7 +105,7 @@ function render(){
     d.innerHTML=`<div class="loc" lang="${l.voix_nav}">${esc(e.texte)}</div>
       <button class="play" aria-label="Écouter la prononciation">▶</button>
       <div class="tr">${s.fr?`<b>${esc(e.fr)}</b>`:""}${s.fr&&s.en?" · ":""}${s.en?esc(e.en):""}
-      <div class="tag">${esc(e.categorie)}${e.auto&&e.auto.length?" · phonétique générée, à vérifier":""}</div></div>
+      <div class="tag">${esc(e.categorie)}${e.auto&&e.auto.length?" · phonétique à vérifier":""}</div></div>
       ${det.length?`<div class="det">${det.map(x=>`<div>${x}</div>`).join("")}</div>`:""}`;
     d.querySelector(".play").onclick=()=>speak(e);
     box.appendChild(d);
@@ -113,7 +114,10 @@ function render(){
 $("q").oninput=ev=>{state.q=ev.target.value;render()};
 initLang();cats();dlg();render();
 }).catch(()=>{document.getElementById("list").innerHTML='<div class="empty">Données introuvables (data.json).</div>'});
-if("serviceWorker" in navigator)navigator.serviceWorker.register("sw.js");
+if("serviceWorker" in navigator){
+  navigator.serviceWorker.register("sw.js",{updateViaCache:"none"});
+  navigator.serviceWorker.ready.then(r=>r.active&&r.active.postMessage("precache"));
+}
 </script>
 </body>
 </html>

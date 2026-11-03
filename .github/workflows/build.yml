@@ -1,25 +1,25 @@
 name: Génération et publication
 on:
-  workflow_dispatch:        # bouton « Run workflow » dans l'onglet Actions
+  workflow_dispatch: # bouton « Run workflow » dans l'onglet Actions
     inputs:
       force_audio:
         description: "Régénérer tous les MP3"
         type: boolean
         default: false
   schedule:
-    - cron: "0 9 * * *"     # et chaque jour (heure UTC)
-permissions: {contents: write, pages: write, id-token: write}
-concurrency: {group: pages, cancel-in-progress: false}
+    - cron: "0 9 * * *" # et chaque jour (heure UTC)
+permissions: { contents: write, pages: write, id-token: write }
+concurrency: { group: pages, cancel-in-progress: false }
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
-        with: {python-version: "3.12"}
+        with: { python-version: "3.12" }
       - run: sudo apt-get install -y espeak-ng
       - run: pip install openpyxl pypinyin pykakasi korean-romanizer pycantonese edge-tts google-auth requests
-      - run: python build_data.py "${{ vars.SHEET_ID }}" --out site ${{ inputs.force_audio && '--force-audio' || '' }}
+      - run: python build_data.py "${{ vars.SHEET_ID }}" --out site --write-back ${{ inputs.force_audio && '--force-audio' || '' }}
         env:
           GOOGLE_SERVICE_ACCOUNT_JSON: ${{ secrets.GOOGLE_SERVICE_ACCOUNT_JSON }}
       - name: Sauvegarder données et audio dans le dépôt
@@ -28,7 +28,7 @@ jobs:
           git add site a_verifier.csv 2>/dev/null || git add site
           if ! git diff --cached --quiet; then git commit -m "Mise à jour des données" && git push; fi
       - uses: actions/upload-pages-artifact@v3
-        with: {path: site}
+        with: { path: site }
   deploy:
     needs: build
     runs-on: ubuntu-latest
