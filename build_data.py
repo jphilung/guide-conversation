@@ -9,7 +9,7 @@ Installation (une fois) :
 Utilisation :
     python build_data.py ID_OU_URL_DU_SHEETS       # écrit dans site/
     python build_data.py guide_conversation.xlsx   # même chose depuis un fichier
-    options : --no-audio   --out dossier
+    options : --no-audio   --force-audio (régénère tous les MP3)   --out dossier
 
 Le Sheets doit être partagé « Toute personne disposant du lien : lecteur ».
 Une valeur saisie à la main n'est JAMAIS écrasée. Les valeurs générées sont listées dans
@@ -54,13 +54,13 @@ def ipa(lang, text):
     return out.stdout.strip().replace("\n", " ")
 
 # ---------- Audio (régénéré seulement si le texte ou la voix change) ----------
-async def make_audio(items, outdir, manifest_path):
+async def make_audio(items, outdir, manifest_path, force=False):
     import edge_tts
     manifest = json.loads(manifest_path.read_text()) if manifest_path.exists() else {}
     for id_, text, voice, rate in items:
         h = hashlib.sha1(f"{text}|{voice}|{rate}".encode()).hexdigest()
         f = outdir / f"{id_}.mp3"
-        if manifest.get(id_) == h and f.exists():
+        if not force and manifest.get(id_) == h and f.exists():
             continue
         print(f"  audio : {id_}")
         try:
@@ -108,7 +108,8 @@ def rate(s):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("source", help="ID ou URL du Google Sheets, ou chemin d'un .xlsx")
-    ap.add_argument("--no-audio", action="store_true"); ap.add_argument("--out", default="site")
+    ap.add_argument("--no-audio", action="store_true")
+    ap.add_argument("--force-audio", action="store_true", help="régénère tous les MP3"); ap.add_argument("--out", default="site")
     a = ap.parse_args()
     out = Path(a.out); (out / "audio").mkdir(parents=True, exist_ok=True)
 
@@ -120,7 +121,7 @@ def main():
             langs[r[0].strip()] = dict(code=r[0].strip(), nom=r[1], local=r[2], systeme=r[3],
                                        voix_nav=r[4], voix_audio=r[5], vitesse=r[6])
     col = {n.strip(): i for i, n in enumerate(erows[0])}
-    rows, audio_items, review = [], [], []
+    rows, audio_items, review, seen = [], [], [], set()
     for r in erows[1:]:
         def v(n):
             i = col.get(n)
@@ -128,6 +129,9 @@ def main():
         id_, lang, text = v("id"), v("langue"), v("texte_local")
         if not (id_ and lang and text):
             continue
+        if id_ in seen:
+            print(f"ID en double « {id_} » (ligne ignorée) : corrige-le dans le Sheets"); continue
+        seen.add(id_)
         if lang not in langs:
             print(f"Langue inconnue « {lang} » ({id_})"); continue
         row = dict(id=id_, langue=lang, categorie=v("catégorie"), texte=text, fr=v("trad_fr"),
@@ -145,17 +149,28 @@ def main():
         if langs[lang]["voix_audio"]:
             audio_items.append((id_, text, langs[lang]["voix_audio"], rate(langs[lang]["vitesse"])))
 
-    (out / "data.json").write_text(json.dumps(
-        dict(langues=list(langs.values()), expressions=rows), ensure_ascii=False, indent=1), encoding="utf-8")
-    print(f"{len(rows)} expressions → {out / 'data.json'}")
-
     if review:
         with open("a_verifier.csv", "w", newline="", encoding="utf-8") as f:
             csv.writer(f).writerows([["id", "texte", "champ", "valeur_generee"]] + review)
         print(f"{len(review)} valeurs générées à relire → a_verifier.csv")
 
     if not a.no_audio and audio_items:
-        asyncio.run(make_audio(audio_items, out / "audio", out / "audio" / "manifest.json"))
+        asyncio.run(make_audio(audio_items, out / "audio", out / "audio" / "manifest.json", a.force_audio))
+
+    for row in rows:  # "" si pas d'enregistrement (l'app passe alors directement à la voix du navigateur)
+        f = out / "audio" / f"{row['id']}.mp3"
+        row["audio"] = f"audio/{f.name}?v={hashlib.sha1(f.read_bytes()).hexdigest()[:8]}" if f.exists() else ""
+    (out / "data.json").write_text(json.dumps(
+        dict(langues=list(langs.values()), expressions=rows), ensure_ascii=False, indent=1), encoding="utf-8")
+    print(f"{len(rows)} expressions → {out / 'data.json'}")
+
+    mf = out / "audio" / "manifest.json"  # supprime les MP3 générés dont l'id n'existe plus (jamais tes enregistrements)
+    if mf.exists() and rows:
+        m = json.loads(mf.read_text()); ids = {r["id"] for r in rows}
+        for old in [k for k in m if k not in ids]:
+            (out / "audio" / f"{old}.mp3").unlink(missing_ok=True); del m[old]
+            print(f"  audio orphelin supprimé : {old}")
+        mf.write_text(json.dumps(m, indent=1))
 
     sw = out / "sw.js"  # nouvelle version du cache hors ligne dès que données ou audio changent
     if sw.exists():
