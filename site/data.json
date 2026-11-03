@@ -1,0 +1,112 @@
+{
+ "langues": [
+  {
+   "code": "zh",
+   "nom": "Chinois (mandarin)",
+   "local": "中文",
+   "systeme": "pinyin",
+   "voix_nav": "zh-CN",
+   "voix_audio": "zh-CN-XiaoxiaoNeural",
+   "vitesse": "-10%"
+  },
+  {
+   "code": "ja",
+   "nom": "Japonais",
+   "local": "日本語",
+   "systeme": "romaji (Hepburn)",
+   "voix_nav": "ja-JP",
+   "voix_audio": "ja-JP-NanamiNeural",
+   "vitesse": "-10%"
+  },
+  {
+   "code": "ko",
+   "nom": "Coréen",
+   "local": "한국어",
+   "systeme": "romanisation révisée",
+   "voix_nav": "ko-KR",
+   "voix_audio": "ko-KR-SunHiNeural",
+   "vitesse": "-10%"
+  },
+  {
+   "code": "es",
+   "nom": "Espagnol",
+   "local": "Español",
+   "systeme": "",
+   "voix_nav": "es-ES",
+   "voix_audio": "es-ES-ElviraNeural",
+   "vitesse": "-5%"
+  }
+ ],
+ "expressions": [
+  {
+   "id": "zh-0001",
+   "langue": "zh",
+   "categorie": "salutations",
+   "texte": "你好",
+   "fr": "Bonjour",
+   "en": "Hello",
+   "api": "ni˨˩ xɑʊ̯˨˩",
+   "roman": "nǐ hǎo",
+   "commentaire": "Exemple. Poli et universel.",
+   "verifie": false,
+   "auto": [],
+   "audio": "audio/zh-0001.mp3"
+  },
+  {
+   "id": "zh-0002",
+   "langue": "zh",
+   "categorie": "salutations",
+   "texte": "谢谢",
+   "fr": "Merci",
+   "en": "Thank you",
+   "api": "ɕjɛ˥˩ ɕjɛ",
+   "roman": "xièxie",
+   "commentaire": "Exemple. Le 2e « xie » est atone.",
+   "verifie": false,
+   "auto": [],
+   "audio": "audio/zh-0002.mp3"
+  },
+  {
+   "id": "ja-0001",
+   "langue": "ja",
+   "categorie": "salutations",
+   "texte": "ありがとう",
+   "fr": "Merci",
+   "en": "Thank you",
+   "api": "aɾiɡatoː",
+   "roman": "arigatō",
+   "commentaire": "Exemple. Ajouter « gozaimasu » pour être plus poli.",
+   "verifie": false,
+   "auto": [],
+   "audio": "audio/ja-0001.mp3"
+  },
+  {
+   "id": "ko-0001",
+   "langue": "ko",
+   "categorie": "salutations",
+   "texte": "감사합니다",
+   "fr": "Merci",
+   "en": "Thank you",
+   "api": "kamsahamnida",
+   "roman": "gamsahamnida",
+   "commentaire": "Exemple. API approximatif, à vérifier.",
+   "verifie": false,
+   "auto": [],
+   "audio": "audio/ko-0001.mp3"
+  },
+  {
+   "id": "es-0001",
+   "langue": "es",
+   "categorie": "transport",
+   "texte": "¿Dónde está el baño?",
+   "fr": "Où sont les toilettes ?",
+   "en": "Where is the bathroom?",
+   "api": "ˈdonde esˈta el ˈbaɲo",
+   "roman": "",
+   "commentaire": "Exemple. Pas de romanisation nécessaire.",
+   "verifie": false,
+   "auto": [],
+   "audio": "audio/es-0001.mp3"
+  }
+ ]
+}
