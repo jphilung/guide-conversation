@@ -2,7 +2,7 @@
  "langues": [
   {
    "code": "zh",
-   "nom": "Chinois (mandarin)",
+   "nom": "Mandarin",
    "local": "中文",
    "systeme": "pinyin",
    "voix_nav": "zh-CN",
@@ -10,31 +10,49 @@
    "vitesse": "-10%"
   },
   {
-   "code": "ja",
-   "nom": "Japonais",
-   "local": "日本語",
-   "systeme": "romaji (Hepburn)",
-   "voix_nav": "ja-JP",
-   "voix_audio": "ja-JP-NanamiNeural",
-   "vitesse": "-10%"
-  },
-  {
-   "code": "ko",
-   "nom": "Coréen",
-   "local": "한국어",
-   "systeme": "romanisation révisée",
-   "voix_nav": "ko-KR",
-   "voix_audio": "ko-KR-SunHiNeural",
-   "vitesse": "-10%"
-  },
-  {
-   "code": "es",
-   "nom": "Espagnol",
+   "code": "es-es",
+   "nom": "Espagnol (Espagne)",
    "local": "Español",
    "systeme": "",
    "voix_nav": "es-ES",
    "voix_audio": "es-ES-ElviraNeural",
    "vitesse": "-5%"
+  },
+  {
+   "code": "de",
+   "nom": "Allemand",
+   "local": "Deutsch",
+   "systeme": "",
+   "voix_nav": "de-DE",
+   "voix_audio": "de-DE-KatjaNeural",
+   "vitesse": "-5%"
+  },
+  {
+   "code": "es-mx",
+   "nom": "Espagnol (Mexique)",
+   "local": "Español",
+   "systeme": "",
+   "voix_nav": "es-MX",
+   "voix_audio": "es-MX-DaliaNeural",
+   "vitesse": "-5%"
+  },
+  {
+   "code": "yue",
+   "nom": "Cantonais",
+   "local": "粵語",
+   "systeme": "jyutping",
+   "voix_nav": "zh-HK",
+   "voix_audio": "zh-HK-HiuMaanNeural",
+   "vitesse": "-10%"
+  },
+  {
+   "code": "km",
+   "nom": "Khmer",
+   "local": "ភាសាខ្មែរ",
+   "systeme": "romanisation",
+   "voix_nav": "km-KH",
+   "voix_audio": "km-KH-PisethNeural",
+   "vitesse": "-10%"
   }
  ],
  "expressions": [
@@ -47,7 +65,7 @@
    "en": "Hello",
    "api": "ni˨˩ xɑʊ̯˨˩",
    "roman": "nǐ hǎo",
-   "commentaire": "Exemple. Poli et universel.",
+   "commentaire": "",
    "verifie": false,
    "auto": [],
    "audio": "audio/zh-0001.mp3"
@@ -61,52 +79,469 @@
    "en": "Thank you",
    "api": "ɕjɛ˥˩ ɕjɛ",
    "roman": "xièxie",
-   "commentaire": "Exemple. Le 2e « xie » est atone.",
+   "commentaire": "",
    "verifie": false,
    "auto": [],
    "audio": "audio/zh-0002.mp3"
   },
   {
-   "id": "ja-0001",
-   "langue": "ja",
+   "id": "zh-0003",
+   "langue": "zh",
    "categorie": "salutations",
-   "texte": "ありがとう",
-   "fr": "Merci",
-   "en": "Thank you",
-   "api": "aɾiɡatoː",
-   "roman": "arigatō",
-   "commentaire": "Exemple. Ajouter « gozaimasu » pour être plus poli.",
+   "texte": "不客气",
+   "fr": "De rien",
+   "en": "",
+   "api": "(en)bʌ5fˈɔːɔː kɛ5fˈɔːɔː kɪ5fˈɔːɔː(cmn)",
+   "roman": "bú kè qì",
+   "commentaire": "",
    "verifie": false,
-   "auto": [],
-   "audio": "audio/ja-0001.mp3"
+   "auto": [
+    "roman",
+    "api"
+   ],
+   "audio": "audio/zh-0003.mp3"
   },
   {
-   "id": "ko-0001",
-   "langue": "ko",
-   "categorie": "salutations",
-   "texte": "감사합니다",
-   "fr": "Merci",
-   "en": "Thank you",
-   "api": "kamsahamnida",
-   "roman": "gamsahamnida",
-   "commentaire": "Exemple. API approximatif, à vérifier.",
-   "verifie": false,
-   "auto": [],
-   "audio": "audio/ko-0001.mp3"
-  },
-  {
-   "id": "es-0001",
-   "langue": "es",
-   "categorie": "transport",
-   "texte": "¿Dónde está el baño?",
+   "id": "zh-0004",
+   "langue": "zh",
+   "categorie": "directions",
+   "texte": "洗手间在哪里？",
    "fr": "Où sont les toilettes ?",
    "en": "Where is the bathroom?",
-   "api": "ˈdonde esˈta el ˈbaɲo",
-   "roman": "",
-   "commentaire": "Exemple. Pas de romanisation nécessaire.",
+   "api": "(en)zɪ5θɹˈiː5(cmn) s.ˈou2 (en)dʒaɪ4ə1nwɒ1n zeɪ1fɔːɔː na1θɹiː1 lɪ1θɹiː1(cmn)",
+   "roman": "xǐ shǒu jiān zài nǎ lǐ ？",
+   "commentaire": "",
    "verifie": false,
-   "auto": [],
-   "audio": "audio/es-0001.mp3"
+   "auto": [
+    "roman",
+    "api"
+   ],
+   "audio": "audio/zh-0004.mp3"
+  },
+  {
+   "id": "zh-0005",
+   "langue": "zh",
+   "categorie": "directions",
+   "texte": "洗手间",
+   "fr": "Toilettes",
+   "en": "",
+   "api": "(en)zɪ5θɹˈiː5(cmn) s.ˈou2 (en)dʒaɪ4ə1nwɒ1n(cmn)",
+   "roman": "xǐ shǒu jiān",
+   "commentaire": "",
+   "verifie": false,
+   "auto": [
+    "roman",
+    "api"
+   ],
+   "audio": "audio/zh-0005.mp3"
+  },
+  {
+   "id": "zh-0006",
+   "langue": "zh",
+   "categorie": "langue",
+   "texte": "我听不懂。",
+   "fr": "Je ne comprends pas.",
+   "en": "",
+   "api": "wˈo2 (en)tɪ4ŋwɒ1n bʌ1fɔːɔː də1ŋθɹiː1(cmn)",
+   "roman": "wǒ tīng bù dǒng 。",
+   "commentaire": "",
+   "verifie": false,
+   "auto": [
+    "roman",
+    "api"
+   ],
+   "audio": "audio/zh-0006.mp3"
+  },
+  {
+   "id": "zh-0007",
+   "langue": "zh",
+   "categorie": "langue",
+   "texte": "我不会说普通话。",
+   "fr": "Je ne parle pas mandarin.",
+   "en": "",
+   "api": "wˈo2 (en)bʌ4fɔːɔː hjuː1ɪ1fɔːɔː(cmn) s.wˈo5 (en)pʌ2θɹiː1 tə1ŋwɒ1n hjuː1ɐɐfɔːɔː(cmn)",
+   "roman": "wǒ bú huì shuō pǔ tōng huà 。",
+   "commentaire": "",
+   "verifie": false,
+   "auto": [
+    "roman",
+    "api"
+   ],
+   "audio": "audio/zh-0007.mp3"
+  },
+  {
+   "id": "zh-0008",
+   "langue": "zh",
+   "categorie": "langue",
+   "texte": "你会说英文吗？",
+   "fr": "Parles-tu anglais ?",
+   "en": "Do you speak English?",
+   "api": "(en)nɪ5θɹˈiː5 hjˌuː5ɪ5fˈɔːɔː(cmn) s.wˈo5 (en)jɪ2ŋwɒ1n wɛ1ntuː1 ma1faɪ1v(cmn)",
+   "roman": "nǐ huì shuō yīng wén ma ？",
+   "commentaire": "Yīngwén est l'anglais écrit; plus familier",
+   "verifie": false,
+   "auto": [
+    "roman",
+    "api"
+   ],
+   "audio": "audio/zh-0008.mp3"
+  },
+  {
+   "id": "zh-0009",
+   "langue": "zh",
+   "categorie": "langue",
+   "texte": "你会说英语吗？",
+   "fr": "Parles-tu anglais ?",
+   "en": "Do you speak English?",
+   "api": "(en)nɪ5θɹˈiː5 hjˌuː5ɪ5fˈɔːɔː(cmn) s.wˈo5 (en)jɪ2ŋwɒ1n(cmn) ʲˈy2 (en)ma4faɪ1v(cmn)",
+   "roman": "nǐ huì shuō yīng yǔ ma ？",
+   "commentaire": "Yīngyǔ est l'anglais parlé; plus formel",
+   "verifie": false,
+   "auto": [
+    "roman",
+    "api"
+   ],
+   "audio": "audio/zh-0009.mp3"
+  },
+  {
+   "id": "zh-0010",
+   "langue": "zh",
+   "categorie": "achats",
+   "texte": "这个多少钱？",
+   "fr": "Combien ça coûte ?",
+   "en": "",
+   "api": "(en)ʒɛ5fˈɔːɔː dʒɛ5fˈaɪ5v djˌuː5ə5wˈɒ5n(cmn) s.ˈɑu2 (en)kaɪ4ə1ntuː1(cmn)",
+   "roman": "zhè ge duō shǎo qián ？",
+   "commentaire": "",
+   "verifie": false,
+   "auto": [
+    "roman",
+    "api"
+   ],
+   "audio": "audio/zh-0010.mp3"
+  },
+  {
+   "id": "zh-0011",
+   "langue": "zh",
+   "categorie": "achats",
+   "texte": "我不要",
+   "fr": "",
+   "en": "I don't want it",
+   "api": "wˈo2 (en)bʌ4fɔːɔː jeɪ1ə1fɔːɔː(cmn)",
+   "roman": "wǒ bú yào",
+   "commentaire": "Direct; Can drop Wǒ",
+   "verifie": false,
+   "auto": [
+    "roman",
+    "api"
+   ],
+   "audio": "audio/zh-0011.mp3"
+  },
+  {
+   "id": "zh-0012",
+   "langue": "zh",
+   "categorie": "achats",
+   "texte": "我不需要",
+   "fr": "",
+   "en": "I don't need it / I don't use it",
+   "api": "wˈo2 (en)bʌ4fɔːɔː zʌ1wɒ1n jeɪ1ə1fɔːɔː(cmn)",
+   "roman": "wǒ bù xū yào",
+   "commentaire": "Neutral; Can drop Wǒ",
+   "verifie": false,
+   "auto": [
+    "roman",
+    "api"
+   ],
+   "audio": "audio/zh-0012.mp3"
+  },
+  {
+   "id": "zh-0013",
+   "langue": "zh",
+   "categorie": "achats",
+   "texte": "我不用",
+   "fr": "",
+   "en": "I don't need it / I don't use it",
+   "api": "wˈo2 (en)bʌ4fɔːɔː(cmn) ˈyu5ŋ",
+   "roman": "wǒ bù yòng",
+   "commentaire": "Casual; Can drop Wǒ",
+   "verifie": false,
+   "auto": [
+    "roman",
+    "api"
+   ],
+   "audio": "audio/zh-0013.mp3"
+  },
+  {
+   "id": "zh-0014",
+   "langue": "zh",
+   "categorie": "achats",
+   "texte": "我不用了",
+   "fr": "",
+   "en": "I don't need it anymore / I'm not going to use it anymore",
+   "api": "wˈo2 (en)bʌ4fɔːɔː(cmn) ˈyu5ŋ (en)lɛ1faɪ1v(cmn)",
+   "roman": "wǒ bù yòng le",
+   "commentaire": "Casual; Can drop Wǒ",
+   "verifie": false,
+   "auto": [
+    "roman",
+    "api"
+   ],
+   "audio": "audio/zh-0014.mp3"
+  },
+  {
+   "id": "zh-0015",
+   "langue": "zh",
+   "categorie": "politesse",
+   "texte": "不好意思",
+   "fr": "Excusez-moi / Pardon de vous déranger",
+   "en": "",
+   "api": "(en)bʌ5fˈɔːɔː hˌeɪ5ə5θɹˈiː5 jɪ5fˈɔːɔː sɪ5wˈɒ5n(cmn)",
+   "roman": "bù hǎo yì sī",
+   "commentaire": "",
+   "verifie": false,
+   "auto": [
+    "roman",
+    "api"
+   ],
+   "audio": "audio/zh-0015.mp3"
+  },
+  {
+   "id": "zh-0016",
+   "langue": "zh",
+   "categorie": "politesse",
+   "texte": "对不起",
+   "fr": "Désolé / Je suis vraiment désolé",
+   "en": "Désolé",
+   "api": "(en)djˌuː5ɪ5fˈɔːɔː bʌ5fˈɔːɔː kɪ5θɹˈiː5(cmn)",
+   "roman": "duì bù qǐ",
+   "commentaire": "",
+   "verifie": false,
+   "auto": [
+    "roman",
+    "api"
+   ],
+   "audio": "audio/zh-0016.mp3"
+  },
+  {
+   "id": "zh-0017",
+   "langue": "zh",
+   "categorie": "politesse",
+   "texte": "请问",
+   "fr": "Pardon, puis-je vous demander... / S'il vous plaît...",
+   "en": "",
+   "api": "(en)kɪ5ŋθɹˈiː5 wɛ5nfˈɔːɔː(cmn)",
+   "roman": "qǐng wèn",
+   "commentaire": "",
+   "verifie": false,
+   "auto": [
+    "roman",
+    "api"
+   ],
+   "audio": "audio/zh-0017.mp3"
+  },
+  {
+   "id": "zh-0018",
+   "langue": "zh",
+   "categorie": "politesse",
+   "texte": "借过",
+   "fr": "Pardon / laissez-moi passer",
+   "en": "",
+   "api": "(en)dʒiː5fˈɔːɔː ɡjˌuː5ə5fˈɔːɔː(cmn)",
+   "roman": "jiè guò",
+   "commentaire": "",
+   "verifie": false,
+   "auto": [
+    "roman",
+    "api"
+   ],
+   "audio": "audio/zh-0018.mp3"
+  },
+  {
+   "id": "zh-0019",
+   "langue": "zh",
+   "categorie": "politesse",
+   "texte": "请排队",
+   "fr": "",
+   "en": "Please queue",
+   "api": "(en)kɪ5ŋθɹˈiː5 peɪ5tˈuː5 djˌuː5ɪ5fˈɔːɔː(cmn)",
+   "roman": "qǐng pái duì",
+   "commentaire": "",
+   "verifie": false,
+   "auto": [
+    "roman",
+    "api"
+   ],
+   "audio": "audio/zh-0019.mp3"
+  },
+  {
+   "id": "zh-0020",
+   "langue": "zh",
+   "categorie": "politesse",
+   "texte": "没关系",
+   "fr": "Pas de problème / ce n'est rien",
+   "en": "",
+   "api": "(en)meɪ5tˈuː5 ɡwɑː5nwˈɒ5n zɪ5fˈɔːɔː(cmn)",
+   "roman": "méi guān xì",
+   "commentaire": "",
+   "verifie": false,
+   "auto": [
+    "roman",
+    "api"
+   ],
+   "audio": "audio/zh-0020.mp3"
+  },
+  {
+   "id": "zh-0021",
+   "langue": "zh",
+   "categorie": "salutations",
+   "texte": "是",
+   "fr": "Oui",
+   "en": "",
+   "api": "s.ˈi.5",
+   "roman": "shì",
+   "commentaire": "",
+   "verifie": false,
+   "auto": [
+    "roman",
+    "api"
+   ],
+   "audio": "audio/zh-0021.mp3"
+  },
+  {
+   "id": "zh-0022",
+   "langue": "zh",
+   "categorie": "salutations",
+   "texte": "对",
+   "fr": "C'est exact",
+   "en": "",
+   "api": "(en)djˌuː5ɪ5fˈɔːɔː(cmn)",
+   "roman": "duì",
+   "commentaire": "",
+   "verifie": false,
+   "auto": [
+    "roman",
+    "api"
+   ],
+   "audio": "audio/zh-0022.mp3"
+  },
+  {
+   "id": "zh-0021",
+   "langue": "zh",
+   "categorie": "salutations",
+   "texte": "不是",
+   "fr": "Non",
+   "en": "",
+   "api": "(en)bʌ5fˈɔːɔː(cmn) s.ˈi.5",
+   "roman": "bú shì",
+   "commentaire": "",
+   "verifie": false,
+   "auto": [
+    "roman",
+    "api"
+   ],
+   "audio": "audio/zh-0021.mp3"
+  },
+  {
+   "id": "zh-0022",
+   "langue": "zh",
+   "categorie": "salutations",
+   "texte": "不对",
+   "fr": "Ce n'est pas ça",
+   "en": "",
+   "api": "(en)bʌ5fˈɔːɔː djˌuː5ɪ5fˈɔːɔː(cmn)",
+   "roman": "bú duì",
+   "commentaire": "",
+   "verifie": false,
+   "auto": [
+    "roman",
+    "api"
+   ],
+   "audio": "audio/zh-0022.mp3"
+  },
+  {
+   "id": "zh-0023",
+   "langue": "zh",
+   "categorie": "salutations",
+   "texte": "好",
+   "fr": "OK / Ça marche",
+   "en": "",
+   "api": "(en)hˌeɪ5ə5θɹˈiː5(cmn)",
+   "roman": "hǎo",
+   "commentaire": "Accepter une proposition; Neutre, direct",
+   "verifie": false,
+   "auto": [
+    "roman",
+    "api"
+   ],
+   "audio": "audio/zh-0023.mp3"
+  },
+  {
+   "id": "zh-0024",
+   "langue": "zh",
+   "categorie": "salutations",
+   "texte": "好的",
+   "fr": "Très bien / C'est noté",
+   "en": "",
+   "api": "(en)hˌeɪ5ə5θɹˈiː5 dɛ5fˈaɪ5v(cmn)",
+   "roman": "hǎo de",
+   "commentaire": "Valider une demande / consigne; Poli, coopératif",
+   "verifie": false,
+   "auto": [
+    "roman",
+    "api"
+   ],
+   "audio": "audio/zh-0024.mp3"
+  },
+  {
+   "id": "zh-0025",
+   "langue": "zh",
+   "categorie": "salutations",
+   "texte": "好了",
+   "fr": "C'est prêt / C'est bon / Ça suffit",
+   "en": "",
+   "api": "(en)hˌeɪ5ə5θɹˈiː5 lɛ5fˈaɪ5v(cmn)",
+   "roman": "hǎo le",
+   "commentaire": "Constater l'achèvement ou clore; Factuel ou impatient",
+   "verifie": false,
+   "auto": [
+    "roman",
+    "api"
+   ],
+   "audio": "audio/zh-0025.mp3"
+  },
+  {
+   "id": "zh-0026",
+   "langue": "zh",
+   "categorie": "salutations",
+   "texte": "再见",
+   "fr": "Au revoir",
+   "en": "",
+   "api": "(en)zeɪ5fˈɔːɔː dʒˌaɪ5ə5nfˈɔːɔː(cmn)",
+   "roman": "zài jiàn",
+   "commentaire": "",
+   "verifie": false,
+   "auto": [
+    "roman",
+    "api"
+   ],
+   "audio": "audio/zh-0026.mp3"
+  },
+  {
+   "id": "zh-0027",
+   "langue": "zh",
+   "categorie": "achats",
+   "texte": "元",
+   "fr": "Yuan",
+   "en": "",
+   "api": "(en)jˌuː5ɐɐntˈuː5(cmn)",
+   "roman": "yuán",
+   "commentaire": "",
+   "verifie": false,
+   "auto": [
+    "roman",
+    "api"
+   ],
+   "audio": "audio/zh-0027.mp3"
   }
  ]
 }

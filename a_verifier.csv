@@ -1,0 +1,55 @@
+id,texte,champ,valeur_generee
+zh-0003,不客气,roman,bú kè qì
+zh-0003,不客气,api,(en)bʌ5fˈɔːɔː kɛ5fˈɔːɔː kɪ5fˈɔːɔː(cmn)
+zh-0004,洗手间在哪里？,roman,xǐ shǒu jiān zài nǎ lǐ ？
+zh-0004,洗手间在哪里？,api,(en)zɪ5θɹˈiː5(cmn) s.ˈou2 (en)dʒaɪ4ə1nwɒ1n zeɪ1fɔːɔː na1θɹiː1 lɪ1θɹiː1(cmn)
+zh-0005,洗手间,roman,xǐ shǒu jiān
+zh-0005,洗手间,api,(en)zɪ5θɹˈiː5(cmn) s.ˈou2 (en)dʒaɪ4ə1nwɒ1n(cmn)
+zh-0006,我听不懂。,roman,wǒ tīng bù dǒng 。
+zh-0006,我听不懂。,api,wˈo2 (en)tɪ4ŋwɒ1n bʌ1fɔːɔː də1ŋθɹiː1(cmn)
+zh-0007,我不会说普通话。,roman,wǒ bú huì shuō pǔ tōng huà 。
+zh-0007,我不会说普通话。,api,wˈo2 (en)bʌ4fɔːɔː hjuː1ɪ1fɔːɔː(cmn) s.wˈo5 (en)pʌ2θɹiː1 tə1ŋwɒ1n hjuː1ɐɐfɔːɔː(cmn)
+zh-0008,你会说英文吗？,roman,nǐ huì shuō yīng wén ma ？
+zh-0008,你会说英文吗？,api,(en)nɪ5θɹˈiː5 hjˌuː5ɪ5fˈɔːɔː(cmn) s.wˈo5 (en)jɪ2ŋwɒ1n wɛ1ntuː1 ma1faɪ1v(cmn)
+zh-0009,你会说英语吗？,roman,nǐ huì shuō yīng yǔ ma ？
+zh-0009,你会说英语吗？,api,(en)nɪ5θɹˈiː5 hjˌuː5ɪ5fˈɔːɔː(cmn) s.wˈo5 (en)jɪ2ŋwɒ1n(cmn) ʲˈy2 (en)ma4faɪ1v(cmn)
+zh-0010,这个多少钱？,roman,zhè ge duō shǎo qián ？
+zh-0010,这个多少钱？,api,(en)ʒɛ5fˈɔːɔː dʒɛ5fˈaɪ5v djˌuː5ə5wˈɒ5n(cmn) s.ˈɑu2 (en)kaɪ4ə1ntuː1(cmn)
+zh-0011,我不要,roman,wǒ bú yào
+zh-0011,我不要,api,wˈo2 (en)bʌ4fɔːɔː jeɪ1ə1fɔːɔː(cmn)
+zh-0012,我不需要,roman,wǒ bù xū yào
+zh-0012,我不需要,api,wˈo2 (en)bʌ4fɔːɔː zʌ1wɒ1n jeɪ1ə1fɔːɔː(cmn)
+zh-0013,我不用,roman,wǒ bù yòng
+zh-0013,我不用,api,wˈo2 (en)bʌ4fɔːɔː(cmn) ˈyu5ŋ
+zh-0014,我不用了,roman,wǒ bù yòng le
+zh-0014,我不用了,api,wˈo2 (en)bʌ4fɔːɔː(cmn) ˈyu5ŋ (en)lɛ1faɪ1v(cmn)
+zh-0015,不好意思,roman,bù hǎo yì sī
+zh-0015,不好意思,api,(en)bʌ5fˈɔːɔː hˌeɪ5ə5θɹˈiː5 jɪ5fˈɔːɔː sɪ5wˈɒ5n(cmn)
+zh-0016,对不起,roman,duì bù qǐ
+zh-0016,对不起,api,(en)djˌuː5ɪ5fˈɔːɔː bʌ5fˈɔːɔː kɪ5θɹˈiː5(cmn)
+zh-0017,请问,roman,qǐng wèn
+zh-0017,请问,api,(en)kɪ5ŋθɹˈiː5 wɛ5nfˈɔːɔː(cmn)
+zh-0018,借过,roman,jiè guò
+zh-0018,借过,api,(en)dʒiː5fˈɔːɔː ɡjˌuː5ə5fˈɔːɔː(cmn)
+zh-0019,请排队,roman,qǐng pái duì
+zh-0019,请排队,api,(en)kɪ5ŋθɹˈiː5 peɪ5tˈuː5 djˌuː5ɪ5fˈɔːɔː(cmn)
+zh-0020,没关系,roman,méi guān xì
+zh-0020,没关系,api,(en)meɪ5tˈuː5 ɡwɑː5nwˈɒ5n zɪ5fˈɔːɔː(cmn)
+zh-0021,是,roman,shì
+zh-0021,是,api,s.ˈi.5
+zh-0022,对,roman,duì
+zh-0022,对,api,(en)djˌuː5ɪ5fˈɔːɔː(cmn)
+zh-0021,不是,roman,bú shì
+zh-0021,不是,api,(en)bʌ5fˈɔːɔː(cmn) s.ˈi.5
+zh-0022,不对,roman,bú duì
+zh-0022,不对,api,(en)bʌ5fˈɔːɔː djˌuː5ɪ5fˈɔːɔː(cmn)
+zh-0023,好,roman,hǎo
+zh-0023,好,api,(en)hˌeɪ5ə5θɹˈiː5(cmn)
+zh-0024,好的,roman,hǎo de
+zh-0024,好的,api,(en)hˌeɪ5ə5θɹˈiː5 dɛ5fˈaɪ5v(cmn)
+zh-0025,好了,roman,hǎo le
+zh-0025,好了,api,(en)hˌeɪ5ə5θɹˈiː5 lɛ5fˈaɪ5v(cmn)
+zh-0026,再见,roman,zài jiàn
+zh-0026,再见,api,(en)zeɪ5fˈɔːɔː dʒˌaɪ5ə5nfˈɔːɔː(cmn)
+zh-0027,元,roman,yuán
+zh-0027,元,api,(en)jˌuː5ɐɐntˈuː5(cmn)
