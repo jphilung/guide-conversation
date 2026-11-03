@@ -1,6 +1,11 @@
 name: Génération et publication
 on:
   workflow_dispatch:        # bouton « Run workflow » dans l'onglet Actions
+    inputs:
+      force_audio:
+        description: "Régénérer tous les MP3"
+        type: boolean
+        default: false
   schedule:
     - cron: "0 9 * * *"     # et chaque jour (heure UTC)
 permissions: {contents: write, pages: write, id-token: write}
@@ -14,7 +19,7 @@ jobs:
         with: {python-version: "3.12"}
       - run: sudo apt-get install -y espeak-ng
       - run: pip install openpyxl pypinyin pykakasi korean-romanizer pycantonese edge-tts
-      - run: python build_data.py "${{ vars.SHEET_ID }}" --out site
+      - run: python build_data.py "${{ vars.SHEET_ID }}" --out site ${{ inputs.force_audio && '--force-audio' || '' }}
       - name: Sauvegarder données et audio dans le dépôt
         run: |
           git config user.name "build-bot"; git config user.email "build-bot@users.noreply.github.com"
