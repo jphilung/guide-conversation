@@ -11,12 +11,15 @@ Utilisation :
     python build_data.py guide_conversation.xlsx   # même chose depuis un fichier
     options : --no-audio   --force-audio (régénère tous les MP3)   --out dossier
 
-Le Sheets doit être partagé « Toute personne disposant du lien : lecteur ».
+Accès au Sheets, au choix :
+  - compte de service Google (recommandé, Sheets privé) : variable GOOGLE_SERVICE_ACCOUNT_JSON
+    ou option --credentials fichier.json ; le Sheets est partagé avec l'adresse du compte (lecteur) ;
+  - sans identifiants : le Sheets doit être partagé « Toute personne disposant du lien : lecteur ».
 Une valeur saisie à la main n'est JAMAIS écrasée. Les valeurs générées sont listées dans
 a_verifier.csv : relis-les et colle-les dans le Sheets, elles deviennent alors les tiennes.
 """
 
-import argparse, asyncio, csv, hashlib, io, json, re, shutil, subprocess, sys, urllib.parse, urllib.request
+import argparse, asyncio, csv, hashlib, io, json, os, re, shutil, subprocess, sys, urllib.parse, urllib.request
 from pathlib import Path
 from openpyxl import load_workbook
 
@@ -84,7 +87,19 @@ def _csv_rows(sid, tab):
         sys.exit("Google a renvoyé une page web : partage le Sheets en lecture avec toute personne ayant le lien.")
     return list(csv.reader(io.StringIO(txt)))
 
-def load(source):
+def _api_rows(sid, tab, info):
+    """Lecture via l'API Google Sheets avec un compte de service (Sheets privé, toutes les lignes)."""
+    from google.oauth2 import service_account
+    from google.auth.transport.requests import AuthorizedSession
+    creds = service_account.Credentials.from_service_account_info(
+        info, scopes=["https://www.googleapis.com/auth/spreadsheets.readonly"])
+    url = f"https://sheets.googleapis.com/v4/spreadsheets/{sid}/values/{urllib.parse.quote(tab)}"
+    r = AuthorizedSession(creds).get(url, params={"valueRenderOption": "FORMATTED_VALUE"})
+    if r.status_code != 200:
+        sys.exit(f"Erreur de l'API Google Sheets ({r.status_code}) sur l'onglet « {tab} » : {r.text[:400]}")
+    return r.json().get("values", [])
+
+def load(source, info=None):
     """Retourne (lignes de Langues sans en-tête, lignes de Expressions avec en-tête)."""
     if source.lower().endswith(".xlsx"):
         from openpyxl import load_workbook
@@ -93,6 +108,8 @@ def load(source):
         return grab("Langues")[1:], grab("Expressions")
     m = re.search(r"/d/([\w-]+)", source)
     sid = m.group(1) if m else source
+    if info:
+        return _api_rows(sid, "Langues", info)[1:], _api_rows(sid, "Expressions", info)
     return _csv_rows(sid, "Langues")[1:], _csv_rows(sid, "Expressions")
 
 def rate(s):
@@ -108,12 +125,16 @@ def rate(s):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("source", help="ID ou URL du Google Sheets, ou chemin d'un .xlsx")
+    ap.add_argument("--credentials", help="fichier JSON du compte de service (ou variable GOOGLE_SERVICE_ACCOUNT_JSON)")
     ap.add_argument("--no-audio", action="store_true")
     ap.add_argument("--force-audio", action="store_true", help="régénère tous les MP3"); ap.add_argument("--out", default="site")
     a = ap.parse_args()
     out = Path(a.out); (out / "audio").mkdir(parents=True, exist_ok=True)
 
-    lrows, erows = load(a.source)
+    raw = Path(a.credentials).read_text(encoding="utf-8") if a.credentials else os.environ.get("GOOGLE_SERVICE_ACCOUNT_JSON", "")
+    lrows, erows = load(a.source, json.loads(raw) if raw.strip() else None)
+    if not erows:
+        sys.exit("L'onglet Expressions est vide ou illisible.")
     langs = {}
     for r in lrows:
         r = list(r) + [""] * 7
