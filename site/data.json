@@ -67,7 +67,10 @@
    "roman": "nǐ hǎo",
    "commentaire": "",
    "verifie": false,
-   "auto": [],
+   "auto": [
+    "api",
+    "roman"
+   ],
    "audio": "audio/zh-0001.mp3?v=5af8db5d"
   },
   {
@@ -81,7 +84,10 @@
    "roman": "xièxie",
    "commentaire": "",
    "verifie": false,
-   "auto": [],
+   "auto": [
+    "api",
+    "roman"
+   ],
    "audio": "audio/zh-0002.mp3?v=17e5274a"
   },
   {
@@ -95,7 +101,9 @@
    "roman": "",
    "commentaire": "",
    "verifie": false,
-   "auto": [],
+   "auto": [
+    "api"
+   ],
    "audio": "audio/es-es-0001.mp3?v=e91900d8"
   },
   {
@@ -110,8 +118,8 @@
    "commentaire": "",
    "verifie": false,
    "auto": [
-    "roman",
-    "api"
+    "api",
+    "roman"
    ],
    "audio": "audio/zh-0003.mp3?v=9d3039bf"
   },
@@ -127,8 +135,8 @@
    "commentaire": "",
    "verifie": false,
    "auto": [
-    "roman",
-    "api"
+    "api",
+    "roman"
    ],
    "audio": "audio/zh-0004.mp3?v=4e60ee67"
   },
@@ -144,8 +152,8 @@
    "commentaire": "",
    "verifie": false,
    "auto": [
-    "roman",
-    "api"
+    "api",
+    "roman"
    ],
    "audio": "audio/zh-0005.mp3?v=d4d98831"
   },
@@ -161,8 +169,8 @@
    "commentaire": "",
    "verifie": false,
    "auto": [
-    "roman",
-    "api"
+    "api",
+    "roman"
    ],
    "audio": "audio/zh-0006.mp3?v=0e6704af"
   },
@@ -178,8 +186,8 @@
    "commentaire": "",
    "verifie": false,
    "auto": [
-    "roman",
-    "api"
+    "api",
+    "roman"
    ],
    "audio": "audio/zh-0007.mp3?v=471d5bb6"
   },
@@ -195,8 +203,8 @@
    "commentaire": "Yīngwén est l'anglais écrit; plus familier",
    "verifie": false,
    "auto": [
-    "roman",
-    "api"
+    "api",
+    "roman"
    ],
    "audio": "audio/zh-0008.mp3?v=79c0a596"
   },
@@ -212,8 +220,8 @@
    "commentaire": "Yīngyǔ est l'anglais parlé; plus formel",
    "verifie": false,
    "auto": [
-    "roman",
-    "api"
+    "api",
+    "roman"
    ],
    "audio": "audio/zh-0009.mp3?v=c7477c0e"
   },
@@ -229,8 +237,8 @@
    "commentaire": "",
    "verifie": false,
    "auto": [
-    "roman",
-    "api"
+    "api",
+    "roman"
    ],
    "audio": "audio/zh-0010.mp3?v=2bc9d863"
   },
@@ -246,8 +254,8 @@
    "commentaire": "Direct; Can drop Wǒ",
    "verifie": false,
    "auto": [
-    "roman",
-    "api"
+    "api",
+    "roman"
    ],
    "audio": "audio/zh-0011.mp3?v=5e95208e"
   },
@@ -263,8 +271,8 @@
    "commentaire": "Neutral; Can drop Wǒ",
    "verifie": false,
    "auto": [
-    "roman",
-    "api"
+    "api",
+    "roman"
    ],
    "audio": "audio/zh-0012.mp3?v=b705715e"
   },
@@ -280,8 +288,8 @@
    "commentaire": "Casual; Can drop Wǒ",
    "verifie": false,
    "auto": [
-    "roman",
-    "api"
+    "api",
+    "roman"
    ],
    "audio": "audio/zh-0013.mp3?v=fe4e21b3"
   },
@@ -297,8 +305,8 @@
    "commentaire": "Casual; Can drop Wǒ",
    "verifie": false,
    "auto": [
-    "roman",
-    "api"
+    "api",
+    "roman"
    ],
    "audio": "audio/zh-0014.mp3?v=58771ca1"
   },
@@ -314,8 +322,8 @@
    "commentaire": "",
    "verifie": false,
    "auto": [
-    "roman",
-    "api"
+    "api",
+    "roman"
    ],
    "audio": "audio/zh-0015.mp3?v=899b487f"
   },
@@ -331,8 +339,8 @@
    "commentaire": "",
    "verifie": false,
    "auto": [
-    "roman",
-    "api"
+    "api",
+    "roman"
    ],
    "audio": "audio/zh-0016.mp3?v=0b38a8da"
   },
@@ -348,8 +356,8 @@
    "commentaire": "",
    "verifie": false,
    "auto": [
-    "roman",
-    "api"
+    "api",
+    "roman"
    ],
    "audio": "audio/zh-0017.mp3?v=5ced1eca"
   },
@@ -365,8 +373,8 @@
    "commentaire": "",
    "verifie": false,
    "auto": [
-    "roman",
-    "api"
+    "api",
+    "roman"
    ],
    "audio": "audio/zh-0018.mp3?v=3313677b"
   },
@@ -382,8 +390,8 @@
    "commentaire": "",
    "verifie": false,
    "auto": [
-    "roman",
-    "api"
+    "api",
+    "roman"
    ],
    "audio": "audio/zh-0019.mp3?v=cd6ec63d"
   },
@@ -399,8 +407,8 @@
    "commentaire": "",
    "verifie": false,
    "auto": [
-    "roman",
-    "api"
+    "api",
+    "roman"
    ],
    "audio": "audio/zh-0020.mp3?v=e5b6a869"
   },
@@ -416,8 +424,8 @@
    "commentaire": "",
    "verifie": false,
    "auto": [
-    "roman",
-    "api"
+    "api",
+    "roman"
    ],
    "audio": "audio/zh-0021.mp3?v=efa14f84"
   },
@@ -433,8 +441,8 @@
    "commentaire": "",
    "verifie": false,
    "auto": [
-    "roman",
-    "api"
+    "api",
+    "roman"
    ],
    "audio": "audio/zh-0022.mp3?v=029f7827"
   },
@@ -450,8 +458,8 @@
    "commentaire": "",
    "verifie": false,
    "auto": [
-    "roman",
-    "api"
+    "api",
+    "roman"
    ],
    "audio": "audio/zh-0023.mp3?v=deffa246"
   },
@@ -467,8 +475,8 @@
    "commentaire": "",
    "verifie": false,
    "auto": [
-    "roman",
-    "api"
+    "api",
+    "roman"
    ],
    "audio": "audio/zh-0024.mp3?v=66e69f7c"
   },
@@ -484,8 +492,8 @@
    "commentaire": "Accepter une proposition; Neutre, direct",
    "verifie": false,
    "auto": [
-    "roman",
-    "api"
+    "api",
+    "roman"
    ],
    "audio": "audio/zh-0025.mp3?v=985da89c"
   },
@@ -501,8 +509,8 @@
    "commentaire": "Valider une demande / consigne; Poli, coopératif",
    "verifie": false,
    "auto": [
-    "roman",
-    "api"
+    "api",
+    "roman"
    ],
    "audio": "audio/zh-0026.mp3?v=f549ad83"
   },
@@ -518,8 +526,8 @@
    "commentaire": "Constater l'achèvement ou clore; Factuel ou impatient",
    "verifie": false,
    "auto": [
-    "roman",
-    "api"
+    "api",
+    "roman"
    ],
    "audio": "audio/zh-0027.mp3?v=59503b59"
   },
@@ -535,8 +543,8 @@
    "commentaire": "",
    "verifie": false,
    "auto": [
-    "roman",
-    "api"
+    "api",
+    "roman"
    ],
    "audio": "audio/zh-0028.mp3?v=5e841fe7"
   },
@@ -552,8 +560,8 @@
    "commentaire": "",
    "verifie": false,
    "auto": [
-    "roman",
-    "api"
+    "api",
+    "roman"
    ],
    "audio": "audio/zh-0029.mp3?v=55d4fff4"
   },
@@ -569,8 +577,8 @@
    "commentaire": "",
    "verifie": false,
    "auto": [
-    "roman",
-    "api"
+    "api",
+    "roman"
    ],
    "audio": "audio/zh-0030.mp3?v=573b59ce"
   },
@@ -586,8 +594,8 @@
    "commentaire": "Standard Mandarin Chinese translation",
    "verifie": false,
    "auto": [
-    "roman",
-    "api"
+    "api",
+    "roman"
    ],
    "audio": "audio/zh-0031.mp3?v=d371d481"
   },
@@ -603,8 +611,8 @@
    "commentaire": "Standard Mandarin Chinese translation",
    "verifie": false,
    "auto": [
-    "roman",
-    "api"
+    "api",
+    "roman"
    ],
    "audio": "audio/zh-0032.mp3?v=c28a28b6"
   },
@@ -620,8 +628,8 @@
    "commentaire": "Vérifier un fait ou une information",
    "verifie": false,
    "auto": [
-    "roman",
-    "api"
+    "api",
+    "roman"
    ],
    "audio": "audio/zh-0033.mp3?v=27cfab3a"
   },
@@ -637,8 +645,8 @@
    "commentaire": "Demander un consentement ou un accord",
    "verifie": false,
    "auto": [
-    "roman",
-    "api"
+    "api",
+    "roman"
    ],
    "audio": "audio/zh-0034.mp3?v=859dec28"
   }
