@@ -566,6 +566,23 @@
    "audio": "audio/zh-0029.mp3?v=55d4fff4"
   },
   {
+   "id": "zh-0035",
+   "langue": "zh",
+   "categorie": "achats",
+   "texte": "块",
+   "fr": "Kuai",
+   "en": "",
+   "api": "(en)kjˌuː5eɪ5fˈɔːɔː(cmn)",
+   "roman": "kuài",
+   "commentaire": "Yuan (familier)",
+   "verifie": false,
+   "auto": [
+    "api",
+    "roman"
+   ],
+   "audio": "audio/zh-0035.mp3?v=00c6473e"
+  },
+  {
    "id": "zh-0030",
    "langue": "zh",
    "categorie": "salutations",
