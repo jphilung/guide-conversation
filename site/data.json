@@ -71,7 +71,7 @@
     "api",
     "roman"
    ],
-   "audio": "audio/zh-0001.mp3?v=5af8db5d"
+   "audio": "audio/zh-0001.mp3?v=14a07e1d"
   },
   {
    "id": "zh-0002",
@@ -88,7 +88,7 @@
     "api",
     "roman"
    ],
-   "audio": "audio/zh-0002.mp3?v=17e5274a"
+   "audio": "audio/zh-0002.mp3?v=a43769f5"
   },
   {
    "id": "es-es-0001",
@@ -104,7 +104,7 @@
    "auto": [
     "api"
    ],
-   "audio": "audio/es-es-0001.mp3?v=e91900d8"
+   "audio": "audio/es-es-0001.mp3?v=09b83368"
   },
   {
    "id": "zh-0003",
@@ -121,7 +121,7 @@
     "api",
     "roman"
    ],
-   "audio": "audio/zh-0003.mp3?v=9d3039bf"
+   "audio": "audio/zh-0003.mp3?v=d99c239b"
   },
   {
    "id": "zh-0004",
@@ -138,7 +138,7 @@
     "api",
     "roman"
    ],
-   "audio": "audio/zh-0004.mp3?v=4e60ee67"
+   "audio": "audio/zh-0004.mp3?v=73dd4743"
   },
   {
    "id": "zh-0005",
@@ -155,7 +155,7 @@
     "api",
     "roman"
    ],
-   "audio": "audio/zh-0005.mp3?v=d4d98831"
+   "audio": "audio/zh-0005.mp3?v=3458fe2f"
   },
   {
    "id": "zh-0006",
@@ -172,7 +172,7 @@
     "api",
     "roman"
    ],
-   "audio": "audio/zh-0006.mp3?v=0e6704af"
+   "audio": "audio/zh-0006.mp3?v=9567478f"
   },
   {
    "id": "zh-0007",
@@ -189,41 +189,58 @@
     "api",
     "roman"
    ],
-   "audio": "audio/zh-0007.mp3?v=471d5bb6"
+   "audio": "audio/zh-0007.mp3?v=f14431e9"
   },
   {
    "id": "zh-0008",
    "langue": "zh",
    "categorie": "langue",
-   "texte": "你会说英文吗？",
+   "texte": "你会说英语吗？",
    "fr": "Parles-tu anglais ?",
    "en": "Do you speak English?",
    "api": "(en)nɪ5θɹˈiː5 hjˌuː5ɪ5fˈɔːɔː(cmn) s.wˈo5 (en)jɪ2ŋwɒ1n wɛ1ntuː1 ma1faɪ1v(cmn)",
    "roman": "nǐ huì shuō yīng wén ma ？",
-   "commentaire": "Yīngwén est l'anglais écrit; plus familier",
+   "commentaire": "",
    "verifie": false,
    "auto": [
     "api",
     "roman"
    ],
-   "audio": "audio/zh-0008.mp3?v=79c0a596"
+   "audio": "audio/zh-0008.mp3?v=ac493768"
   },
   {
    "id": "zh-0009",
    "langue": "zh",
    "categorie": "langue",
-   "texte": "你会说英语吗？",
-   "fr": "Parles-tu anglais ?",
-   "en": "Do you speak English?",
+   "texte": "英语 / 英文",
+   "fr": "Anglais",
+   "en": "English",
    "api": "(en)nɪ5θɹˈiː5 hjˌuː5ɪ5fˈɔːɔː(cmn) s.wˈo5 (en)jɪ2ŋwɒ1n(cmn) ʲˈy2 (en)ma4faɪ1v(cmn)",
    "roman": "nǐ huì shuō yīng yǔ ma ？",
-   "commentaire": "Yīngyǔ est l'anglais parlé; plus formel",
+   "commentaire": "yīngwén réfère à l'anglais parlé; yīngyǔ à l'anglais écrit",
    "verifie": false,
    "auto": [
     "api",
     "roman"
    ],
-   "audio": "audio/zh-0009.mp3?v=c7477c0e"
+   "audio": "audio/zh-0009.mp3?v=75950fb8"
+  },
+  {
+   "id": "zh-0041",
+   "langue": "zh",
+   "categorie": "langue",
+   "texte": "法语 / 法文",
+   "fr": "Français",
+   "en": "French",
+   "api": "(en)fa5θɹˈiː5(cmn) ʲˈy2 (en)sla4ʃ fa1θɹiː1 wɛ1ntuː1(cmn)",
+   "roman": "fǎ yǔ  /  fǎ wén",
+   "commentaire": "fǎwén réfère au français parlé; fǎyǔ au français écrit",
+   "verifie": false,
+   "auto": [
+    "api",
+    "roman"
+   ],
+   "audio": "audio/zh-0041.mp3?v=9bc2b53c"
   },
   {
    "id": "zh-0010",
@@ -240,7 +257,7 @@
     "api",
     "roman"
    ],
-   "audio": "audio/zh-0010.mp3?v=2bc9d863"
+   "audio": "audio/zh-0010.mp3?v=555cf776"
   },
   {
    "id": "zh-0011",
@@ -257,7 +274,7 @@
     "api",
     "roman"
    ],
-   "audio": "audio/zh-0011.mp3?v=5e95208e"
+   "audio": "audio/zh-0011.mp3?v=22c8620e"
   },
   {
    "id": "zh-0012",
@@ -274,7 +291,7 @@
     "api",
     "roman"
    ],
-   "audio": "audio/zh-0012.mp3?v=b705715e"
+   "audio": "audio/zh-0012.mp3?v=be7bdedb"
   },
   {
    "id": "zh-0013",
@@ -291,7 +308,7 @@
     "api",
     "roman"
    ],
-   "audio": "audio/zh-0013.mp3?v=fe4e21b3"
+   "audio": "audio/zh-0013.mp3?v=7ad960a4"
   },
   {
    "id": "zh-0014",
@@ -308,7 +325,7 @@
     "api",
     "roman"
    ],
-   "audio": "audio/zh-0014.mp3?v=58771ca1"
+   "audio": "audio/zh-0014.mp3?v=7a14492a"
   },
   {
    "id": "zh-0015",
@@ -325,7 +342,7 @@
     "api",
     "roman"
    ],
-   "audio": "audio/zh-0015.mp3?v=899b487f"
+   "audio": "audio/zh-0015.mp3?v=1142bdc8"
   },
   {
    "id": "zh-0016",
@@ -342,7 +359,7 @@
     "api",
     "roman"
    ],
-   "audio": "audio/zh-0016.mp3?v=0b38a8da"
+   "audio": "audio/zh-0016.mp3?v=3be268ad"
   },
   {
    "id": "zh-0017",
@@ -359,7 +376,7 @@
     "api",
     "roman"
    ],
-   "audio": "audio/zh-0017.mp3?v=5ced1eca"
+   "audio": "audio/zh-0017.mp3?v=abc5e0a3"
   },
   {
    "id": "zh-0018",
@@ -376,7 +393,7 @@
     "api",
     "roman"
    ],
-   "audio": "audio/zh-0018.mp3?v=3313677b"
+   "audio": "audio/zh-0018.mp3?v=a0e68207"
   },
   {
    "id": "zh-0019",
@@ -393,7 +410,7 @@
     "api",
     "roman"
    ],
-   "audio": "audio/zh-0019.mp3?v=cd6ec63d"
+   "audio": "audio/zh-0019.mp3?v=293dc81b"
   },
   {
    "id": "zh-0020",
@@ -410,7 +427,7 @@
     "api",
     "roman"
    ],
-   "audio": "audio/zh-0020.mp3?v=e5b6a869"
+   "audio": "audio/zh-0020.mp3?v=6428eff0"
   },
   {
    "id": "zh-0021",
@@ -427,7 +444,7 @@
     "api",
     "roman"
    ],
-   "audio": "audio/zh-0021.mp3?v=efa14f84"
+   "audio": "audio/zh-0021.mp3?v=1443e79b"
   },
   {
    "id": "zh-0022",
@@ -444,7 +461,7 @@
     "api",
     "roman"
    ],
-   "audio": "audio/zh-0022.mp3?v=029f7827"
+   "audio": "audio/zh-0022.mp3?v=d06dd8ad"
   },
   {
    "id": "zh-0023",
@@ -461,7 +478,7 @@
     "api",
     "roman"
    ],
-   "audio": "audio/zh-0023.mp3?v=deffa246"
+   "audio": "audio/zh-0023.mp3?v=499f58ea"
   },
   {
    "id": "zh-0024",
@@ -478,7 +495,7 @@
     "api",
     "roman"
    ],
-   "audio": "audio/zh-0024.mp3?v=66e69f7c"
+   "audio": "audio/zh-0024.mp3?v=9bef905b"
   },
   {
    "id": "zh-0025",
@@ -495,7 +512,7 @@
     "api",
     "roman"
    ],
-   "audio": "audio/zh-0025.mp3?v=985da89c"
+   "audio": "audio/zh-0025.mp3?v=7f3cdf72"
   },
   {
    "id": "zh-0026",
@@ -512,7 +529,7 @@
     "api",
     "roman"
    ],
-   "audio": "audio/zh-0026.mp3?v=f549ad83"
+   "audio": "audio/zh-0026.mp3?v=e7b68881"
   },
   {
    "id": "zh-0027",
@@ -529,7 +546,7 @@
     "api",
     "roman"
    ],
-   "audio": "audio/zh-0027.mp3?v=59503b59"
+   "audio": "audio/zh-0027.mp3?v=c3d2ec6c"
   },
   {
    "id": "zh-0028",
@@ -546,7 +563,7 @@
     "api",
     "roman"
    ],
-   "audio": "audio/zh-0028.mp3?v=5e841fe7"
+   "audio": "audio/zh-0028.mp3?v=7bdb8403"
   },
   {
    "id": "zh-0029",
@@ -563,7 +580,7 @@
     "api",
     "roman"
    ],
-   "audio": "audio/zh-0029.mp3?v=55d4fff4"
+   "audio": "audio/zh-0029.mp3?v=ed71a9c8"
   },
   {
    "id": "zh-0035",
@@ -580,7 +597,7 @@
     "api",
     "roman"
    ],
-   "audio": "audio/zh-0035.mp3?v=00c6473e"
+   "audio": "audio/zh-0035.mp3?v=e2025233"
   },
   {
    "id": "zh-0030",
@@ -597,7 +614,7 @@
     "api",
     "roman"
    ],
-   "audio": "audio/zh-0030.mp3?v=573b59ce"
+   "audio": "audio/zh-0030.mp3?v=009fc219"
   },
   {
    "id": "zh-0031",
@@ -614,7 +631,7 @@
     "api",
     "roman"
    ],
-   "audio": "audio/zh-0031.mp3?v=d371d481"
+   "audio": "audio/zh-0031.mp3?v=57ddfa5e"
   },
   {
    "id": "zh-0032",
@@ -631,7 +648,7 @@
     "api",
     "roman"
    ],
-   "audio": "audio/zh-0032.mp3?v=c28a28b6"
+   "audio": "audio/zh-0032.mp3?v=0c40cad8"
   },
   {
    "id": "zh-0033",
@@ -648,7 +665,7 @@
     "api",
     "roman"
    ],
-   "audio": "audio/zh-0033.mp3?v=27cfab3a"
+   "audio": "audio/zh-0033.mp3?v=3137704d"
   },
   {
    "id": "zh-0034",
@@ -665,7 +682,109 @@
     "api",
     "roman"
    ],
-   "audio": "audio/zh-0034.mp3?v=859dec28"
+   "audio": "audio/zh-0034.mp3?v=f2fd3d72"
+  },
+  {
+   "id": "zh-0036",
+   "langue": "zh",
+   "categorie": "directions",
+   "texte": "北",
+   "fr": "Nord",
+   "en": "North",
+   "api": "(en)beɪ5θɹˈiː5(cmn)",
+   "roman": "běi",
+   "commentaire": "",
+   "verifie": false,
+   "auto": [
+    "api",
+    "roman"
+   ],
+   "audio": "audio/zh-0036.mp3?v=c2cdd216"
+  },
+  {
+   "id": "zh-0037",
+   "langue": "zh",
+   "categorie": "directions",
+   "texte": "东",
+   "fr": "Est",
+   "en": "East",
+   "api": "(en)də5ŋwˈɒ5n(cmn)",
+   "roman": "dōng",
+   "commentaire": "",
+   "verifie": false,
+   "auto": [
+    "api",
+    "roman"
+   ],
+   "audio": "audio/zh-0037.mp3?v=1bcf9fd8"
+  },
+  {
+   "id": "zh-0038",
+   "langue": "zh",
+   "categorie": "directions",
+   "texte": "南",
+   "fr": "Sud",
+   "en": "South",
+   "api": "(en)na5ntˈuː5(cmn)",
+   "roman": "nán",
+   "commentaire": "",
+   "verifie": false,
+   "auto": [
+    "api",
+    "roman"
+   ],
+   "audio": "audio/zh-0038.mp3?v=720cd5e1"
+  },
+  {
+   "id": "zh-0039",
+   "langue": "zh",
+   "categorie": "directions",
+   "texte": "西",
+   "fr": "Ouest",
+   "en": "West",
+   "api": "(en)zɪ5wˈɒ5n(cmn)",
+   "roman": "xī",
+   "commentaire": "",
+   "verifie": false,
+   "auto": [
+    "api",
+    "roman"
+   ],
+   "audio": "audio/zh-0039.mp3?v=c3325984"
+  },
+  {
+   "id": "zh-0040",
+   "langue": "zh",
+   "categorie": "transport",
+   "texte": "加拿大",
+   "fr": "Canada",
+   "en": "Canada",
+   "api": "(en)dʒˌaɪ5ə5wˈɒ5n na5tˈuː5 da5fˈɔːɔː(cmn)",
+   "roman": "jiā ná dà",
+   "commentaire": "",
+   "verifie": false,
+   "auto": [
+    "api",
+    "roman"
+   ],
+   "audio": "audio/zh-0040.mp3?v=c2c70a6d"
+  },
+  {
+   "id": "zh-0042",
+   "langue": "zh",
+   "categorie": "directions",
+   "texte": "出口",
+   "fr": "Sortie",
+   "en": "Exit",
+   "api": "(en)tʃʌ5wˈɒ5n kuː5θɹˈiː5(cmn)",
+   "roman": "chū kǒu",
+   "commentaire": "",
+   "verifie": false,
+   "auto": [
+    "api",
+    "roman"
+   ],
+   "audio": "audio/zh-0042.mp3?v=e2e9ab50"
   }
  ]
 }

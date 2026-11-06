@@ -1,3 +1,15 @@
 id,texte,champ,valeur_generee
-zh-0035,块,roman,kuài
-zh-0035,块,api,(en)kjˌuː5eɪ5fˈɔːɔː(cmn)
+zh-0041,法语 / 法文,roman,fǎ yǔ  /  fǎ wén
+zh-0041,法语 / 法文,api,(en)fa5θɹˈiː5(cmn) ʲˈy2 (en)sla4ʃ fa1θɹiː1 wɛ1ntuː1(cmn)
+zh-0036,北,roman,běi
+zh-0036,北,api,(en)beɪ5θɹˈiː5(cmn)
+zh-0037,东,roman,dōng
+zh-0037,东,api,(en)də5ŋwˈɒ5n(cmn)
+zh-0038,南,roman,nán
+zh-0038,南,api,(en)na5ntˈuː5(cmn)
+zh-0039,西,roman,xī
+zh-0039,西,api,(en)zɪ5wˈɒ5n(cmn)
+zh-0040,加拿大,roman,jiā ná dà
+zh-0040,加拿大,api,(en)dʒˌaɪ5ə5wˈɒ5n na5tˈuː5 da5fˈɔːɔː(cmn)
+zh-0042,出口,roman,chū kǒu
+zh-0042,出口,api,(en)tʃʌ5wˈɒ5n kuː5θɹˈiː5(cmn)
